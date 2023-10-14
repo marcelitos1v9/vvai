@@ -9,7 +9,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
     <style>
-        /* #loader {
+        #loader {
             position: fixed;
             width: 100%;
             height: 100%;
@@ -21,15 +21,8 @@
             font-size: 24px;
             z-index: 9999;
             animation: spin 2s linear infinite;
-        } */
-
-        #loader {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-            animation: rotate 2.0s infinite linear;
         }
+
 
 
         .navbar-container {
@@ -166,7 +159,7 @@
 
 <body class="bg-dark text-light">
     <div id="loader"></div>
-    <div class="navbar-container bg-light">
+    <div class="navbar-container   fixed-top bg-light">
         <div class="navbar-brand">
             <a href="#"><img src="./img/logo.svg" class="logo" alt=""></a>
         </div>
@@ -180,13 +173,16 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link  btn-p" aria-current="page" href="#">Home</a>
+                                <a class="nav-link  btn-p" aria-current="page" href="#inicio">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-p" href="#">Features</a>
+                                <a class="nav-link btn-p" href="#projeto">Projeto</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-p" href="#">Pricing</a>
+                                <a class="nav-link btn-p" href="#equipe">Equipe</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-p" href="#junte">Junte-se a nós</a>
                             </li>
                         </ul>
                     </div>
@@ -194,82 +190,94 @@
             </nav>
         </div>
     </div>
-    <h1 class="mt-3 mb-3 text-center">VvAi</h1>
-    <div class="container mt-5 pb-3">
-        <div class="row">
-            <div class="col-md-6 m-auto">
-                <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="./img/vvai.svg" class="d-block w-100" alt="...">
+    <h1 class="mt-5 pt-5 text-center">VvAi</h1>
+    <section id="inicio">
+        <div class="container mt-5 pb-3">
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="./img/vvai.svg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="./img/vaca.svg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/vvai2.svg" class="d-block w-100" alt="...">
+                            </div>
                         </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src="./img/vaca.svg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./img/vvai2.svg" class="d-block w-100" alt="...">
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                </div>
+                <div class="col-md-6 ">
+                    <h1 class="mt-4">Apresentando a VVAI: Democratizando a Inteligência Artificial e o Monitoramento
+                        para
+                        Todos</h1>
+                    <p>Seja bem-vindo à VVAI, a vanguarda da inovação que está transformando o cenário da inteligência
+                        artificial e do monitoramento, tornando essas tecnologias avançadas mais acessíveis do que nunca
+                        para todos os usuários. Na VVAI, acreditamos que o futuro da tecnologia deve ser inclusivo, e é
+                        por
+                        isso que nos dedicamos a desenvolver soluções inovadoras que eliminam barreiras e democratizam o
+                        acesso à inteligência artificial e ao monitoramento.
+
+                        Nossa missão é simples, yet poderosa: capacitar indivíduos e empresas, independentemente de seu
+                        tamanho ou setor, a aproveitar ao máximo o potencial da inteligência artificial. Com uma equipe
+                        apaixonada e altamente qualificada de especialistas em IA e monitoramento, estamos redefinindo
+                        padrões e criando ferramentas intuitivas e acessíveis que se integram perfeitamente ao cotidiano
+                        de
+                        nossos usuários.</p>
                 </div>
             </div>
-            <div class="col-md-6 ">
-                <h1 class="mt-4">Apresentando a VVAI: Democratizando a Inteligência Artificial e o Monitoramento para
-                    Todos</h1>
-                <p>Seja bem-vindo à VVAI, a vanguarda da inovação que está transformando o cenário da inteligência
-                    artificial e do monitoramento, tornando essas tecnologias avançadas mais acessíveis do que nunca
-                    para todos os usuários. Na VVAI, acreditamos que o futuro da tecnologia deve ser inclusivo, e é por
-                    isso que nos dedicamos a desenvolver soluções inovadoras que eliminam barreiras e democratizam o
-                    acesso à inteligência artificial e ao monitoramento.
-
-                    Nossa missão é simples, yet poderosa: capacitar indivíduos e empresas, independentemente de seu
-                    tamanho ou setor, a aproveitar ao máximo o potencial da inteligência artificial. Com uma equipe
-                    apaixonada e altamente qualificada de especialistas em IA e monitoramento, estamos redefinindo
-                    padrões e criando ferramentas intuitivas e acessíveis que se integram perfeitamente ao cotidiano de
-                    nossos usuários.</p>
-            </div>
         </div>
-    </div>
+    </section>
     <hr>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 d-flex align-items-center">
-                <div class="justify-content-center align-items-center text-center">
-                    <img src="./img/vaca_circ.png" alt="" class="m-auto p-auto w-75" style="">
+    <section id="projeto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="justify-content-center align-items-center text-center">
+                        <img src="./img/vaca_circ.png" alt="" class="m-auto p-auto w-75" style="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mt-3 py-4">Bem-vindo à System Cow, uma revolução em monitoramento bovino.</h1>
+
+                    <p><strong>Inteligência Artificial Avançada:</strong> Nossa System Cow é alimentada por algoritmos
+                        de
+                        inteligência artificial altamente sofisticados, que analisam minuciosamente o comportamento dos
+                        bovinos em tempo real.</p>
+                    <p><strong>Diagnóstico Preciso</strong>: Ao monitorar uma série de padrões comportamentais, nossa
+                        tecnologia é capaz de identificar sinais sutis de EEB, permitindo diagnósticos precoces e
+                        intervenções rápidas.</p>
+                    <p><strong>Bem-Estar Animal em Primeiro Lugar:</strong> Nosso sistema não apenas detecta doenças,
+                        mas
+                        também promove o bem-estar dos animais. Ao entender seus comportamentos, podemos criar ambientes
+                        que
+                        melhor atendam às suas necessidades, melhorando sua qualidade de vida.</p>
+                    <p><strong>Solução Sustentável:</strong> Além de proteger a saúde do seu rebanho, nossa abordagem
+                        inovadora ajuda a promover a sustentabilidade da indústria pecuária, garantindo uma produção
+                        segura
+                        e ética.</p>
+                    <p>Na System Cow, estamos comprometidos com a saúde dos seus animais e o sucesso do seu negócio.
+                        Junte-se a nós na vanguarda da tecnologia de monitoramento bovino e proporcione aos seus bovinos
+                        o
+                        cuidado que merecem.</p>
                 </div>
             </div>
-            <div class="col-md-6">
-                <h1 class="mt-3 py-4">Bem-vindo à System Cow, uma revolução em monitoramento bovino.</h1>
-
-                <p><strong>Inteligência Artificial Avançada:</strong> Nossa System Cow é alimentada por algoritmos de
-                    inteligência artificial altamente sofisticados, que analisam minuciosamente o comportamento dos
-                    bovinos em tempo real.</p>
-                <p><strong>Diagnóstico Preciso</strong>: Ao monitorar uma série de padrões comportamentais, nossa
-                    tecnologia é capaz de identificar sinais sutis de EEB, permitindo diagnósticos precoces e
-                    intervenções rápidas.</p>
-                <p><strong>Bem-Estar Animal em Primeiro Lugar:</strong> Nosso sistema não apenas detecta doenças, mas
-                    também promove o bem-estar dos animais. Ao entender seus comportamentos, podemos criar ambientes que
-                    melhor atendam às suas necessidades, melhorando sua qualidade de vida.</p>
-                <p><strong>Solução Sustentável:</strong> Além de proteger a saúde do seu rebanho, nossa abordagem
-                    inovadora ajuda a promover a sustentabilidade da indústria pecuária, garantindo uma produção segura
-                    e ética.</p>
-                <p>Na System Cow, estamos comprometidos com a saúde dos seus animais e o sucesso do seu negócio.
-                    Junte-se a nós na vanguarda da tecnologia de monitoramento bovino e proporcione aos seus bovinos o
-                    cuidado que merecem.</p>
-            </div>
         </div>
-    </div>
+    </section>
     <hr>
-    <section class="py-5">
+    <section id="equipe" class="py-5">
         <div class="container">
             <h1 class="text-center mb-3">Equipe VvAi</h1>
             <div class="row">
@@ -285,7 +293,7 @@
         </div>
     </section>
     <hr>
-    <section class=" py-5">
+    <section id="junte" class=" py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
