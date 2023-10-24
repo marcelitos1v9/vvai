@@ -11,9 +11,12 @@
     <style>
         #loader {
             position: fixed;
-            width: 100%;
-            height: 100%;
-            background: #212529;
+            width: 100vw;
+            /* Alterado para 100vw para cobrir a largura da tela */
+            height: 100vh;
+            /* Alterado para 100vh para cobrir a altura da tela */
+            background: rgba(33, 37, 41, 0.5);
+            /* Cor de fundo com opacidade de 50% */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,20 +26,31 @@
             animation: spin 2s linear infinite;
         }
 
+        .nav-link:visited {
+            color: #ffffff;
+            /* Cor padrão para links não visitados e visitados */
+            text-decoration: none;
+            /* Remove sublinhado */
+        }
+
 
         .navbar-brand img {
             width: 50px;
             height: 50px;
         }
 
-        
+
         .nav-item {
             margin-right: 20px;
         }
 
         .nav-link:hover {
-            color: #f8f9fa;
+            color: #1e1e2b;
             cursor: pointer;
+        }
+
+        .nav-link::before {
+            color: #1e1e2b;
         }
 
         .btn-p {
@@ -72,16 +86,16 @@
         }
 
 
-
         .btn-p:active {
             transform: translateY(2px) translateX(1px);
             box-shadow: 0 0 0 0 black;
+            color: #212529;
         }
 
         .btn-p:hover::after {
             height: 100%;
             transition-delay: 0.4s;
-            color: aliceblue;
+            color: #212529;
         }
 
         .container-p {
@@ -97,10 +111,19 @@
 
         .equipe-member img {
             width: 200px;
-            /* Ajuste o tamanho da imagem conforme necessário */
             border-radius: 50%;
             margin-bottom: 10px;
         }
+
+        .aum {
+           
+            transition: transform 0.3s ease;
+        }
+
+        .aum:hover {
+            transform: scale(1.2);
+        }
+
 
         .equipe-member {
             opacity: 0;
@@ -155,10 +178,10 @@
                 <img src="./img/logo.svg" class="logo d-none d-lg-block" alt="">
             </a>
             <div class="d-flex justify-content-center">
-                <a class="nav-link btn-p" id="inicial" href="#inicio" aria-current="page">Início</a>
-                <a class="nav-link btn-p" href="#projeto">Projeto</a>
-                <a class="nav-link btn-p" href="#equipe">Equipe</a>
-                <a class="nav-link btn-p" href="#junte">Juntar</a>
+                <a class="nav-link btn-p text-dark" id="inicial" href="#inicio" aria-current="page">Início</a>
+                <a class="nav-link btn-p text-dark" href="#projeto">Projeto</a>
+                <a class="nav-link btn-p text-dark" href="#equipe">Equipe</a>
+                <a class="nav-link btn-p text-dark" href="#junte">Juntar</a>
             </div>
         </div>
     </div>
@@ -215,55 +238,73 @@
     </section>
     <hr>
     <section id="projeto">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 order-md-2 d-flex align-items-center">
-                <div class="justify-content-center align-items-center text-center">
-                    <img src="./img/vaca_circ.png" alt="" class="m-auto p-auto w-75" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2 d-flex align-items-center">
+                    <div class="justify-content-center align-items-center text-center">
+                        <img src="./img/vaca_circ.png" alt="" class="m-auto p-auto w-75" style="">
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="d-flex justify-content-center">
+                        <img class="mt-3 py-4 w-75 justify-content-center text-center" src="./img/systemcow.png">
+                    </div>
+                    <p><strong>Inteligência Artificial Avançada:</strong> Nossa System Cow é alimentada por algoritmos
+                        de
+                        inteligência artificial altamente sofisticados, que analisam minuciosamente o comportamento dos
+                        bovinos em tempo real.</p>
+                    <p><strong>Diagnóstico Preciso</strong>: Ao monitorar uma série de padrões comportamentais, nossa
+                        tecnologia é capaz de identificar sinais sutis de EEB, permitindo diagnósticos precoces e
+                        intervenções rápidas.</p>
+                    <p><strong>Bem-Estar Animal em Primeiro Lugar:</strong> Nosso sistema não apenas detecta doenças,
+                        mas
+                        também promove o bem-estar dos animais. Ao entender seus comportamentos, podemos criar ambientes
+                        que
+                        melhor atendam às suas necessidades, melhorando sua qualidade de vida.</p>
+                    <p><strong>Solução Sustentável:</strong> Além de proteger a saúde do seu rebanho, nossa abordagem
+                        inovadora ajuda a promover a sustentabilidade da indústria pecuária, garantindo uma produção
+                        segura
+                        e ética.</p>
+                    <p>Na System Cow, estamos comprometidos com a saúde dos seus animais e o sucesso do seu negócio.
+                        Junte-se a nós na vanguarda da tecnologia de monitoramento bovino e proporcione aos seus bovinos
+                        o
+                        cuidado que merecem.</p>
                 </div>
             </div>
-            <div class="col-md-6 order-md-1">
-                <h1 class="mt-3 py-4">Bem-vindo à System Cow, uma revolução em monitoramento bovino.</h1>
-
-                <p><strong>Inteligência Artificial Avançada:</strong> Nossa System Cow é alimentada por algoritmos
-                    de
-                    inteligência artificial altamente sofisticados, que analisam minuciosamente o comportamento dos
-                    bovinos em tempo real.</p>
-                <p><strong>Diagnóstico Preciso</strong>: Ao monitorar uma série de padrões comportamentais, nossa
-                    tecnologia é capaz de identificar sinais sutis de EEB, permitindo diagnósticos precoces e
-                    intervenções rápidas.</p>
-                <p><strong>Bem-Estar Animal em Primeiro Lugar:</strong> Nosso sistema não apenas detecta doenças,
-                    mas
-                    também promove o bem-estar dos animais. Ao entender seus comportamentos, podemos criar ambientes
-                    que
-                    melhor atendam às suas necessidades, melhorando sua qualidade de vida.</p>
-                <p><strong>Solução Sustentável:</strong> Além de proteger a saúde do seu rebanho, nossa abordagem
-                    inovadora ajuda a promover a sustentabilidade da indústria pecuária, garantindo uma produção
-                    segura
-                    e ética.</p>
-                <p>Na System Cow, estamos comprometidos com a saúde dos seus animais e o sucesso do seu negócio.
-                    Junte-se a nós na vanguarda da tecnologia de monitoramento bovino e proporcione aos seus bovinos
-                    o
-                    cuidado que merecem.</p>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <hr>
     <section id="equipe" class="py-5">
         <div class="container">
             <h1 class="text-center mb-3">Equipe VvAi</h1>
-            <div class="row">
+            <div class="row py-3">
                 <div class="col-md-4">
                     <div class="equipe-member text-center">
-                        <img src="./img/marcelito.jpeg" class="mt-3" alt="Nome do Membro da Equipe">
+                        <img src="./img/marcelito.jpeg" class="mt-3 aum" alt="Nome do Membro da Equipe">
+                        <h3 class="mb-3">Marcelo Augusto</h3>
+                        <p>Cargo do Membro</p>
+                        <p>Uma breve descrição sobre o membro da equipe e suas responsabilidades.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="equipe-member text-center ">
+                        <img src="./img/marcelito.jpeg aum" class="mt-3" alt="Nome do Membro da Equipe">
+                        <h3 class="mb-3">Marcelo Augusto</h3>
+                        <p>Cargo do Membro</p>
+                        <p>Uma breve descrição sobre o membro da equipe e suas responsabilidades.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="equipe-member text-center">
+                        <img src="./img/marcelito.jpeg aum" class="mt-3" alt="Nome do Membro da Equipe">
                         <h3 class="mb-3">Marcelo Augusto</h3>
                         <p>Cargo do Membro</p>
                         <p>Uma breve descrição sobre o membro da equipe e suas responsabilidades.</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <hr>
@@ -273,14 +314,12 @@
                 <div class="col-md-6 offset-md-3 text-center">
                     <h2 class="mb-4">Faça Parte da Nossa Comunidade</h2>
                     <p>Inscreva-se para receber as últimas atualizações, ofertas exclusivas e muito mais!</p>
-                    <form>
-                        <div class="row">
-                            <div class="col-md-8 mx-auto">
-                                <div class="input-group mb-3">
-                                    <input type="email" class="form-control" placeholder="Seu Email" required>
-                                    <button class="btn btn-light" type="submit">Inscrever-se</button>
-                                </div>
-                            </div>
+
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Email"
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-light" type="submit" id="button-addon2">inscrever-se</button>
                         </div>
                     </form>
                 </div>
@@ -362,7 +401,7 @@
             }
 
             // Chama a função para rolar para a seção inicial após um pequeno atraso (por exemplo, 1 segundo após o carregamento da página)
-            setTimeout(scrollToInitialSection, 2000);
+            setTimeout(scrollToInitialSection, 3000);
 
             // Outros links de navegação
             var links = document.querySelectorAll('.nav-link');
