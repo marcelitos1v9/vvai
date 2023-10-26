@@ -16,11 +16,6 @@
             font-style: normal;
         }
 
-        body {
-            font-family: 'SuaFonte', sans-serif;
-            /* Use o nome da fonte definido acima como sua fonte principal */
-        }
-
         #loader {
             position: fixed;
             width: 100vw;
@@ -36,6 +31,12 @@
             font-size: 24px;
             z-index: 9999;
             animation: spin 2s linear infinite;
+        }
+        .btn-warning{
+            border: #000000;
+            border-radius: 25px;
+            font-weight: bolder;
+            font-family: inter;
         }
 
         .titulo {
@@ -140,6 +141,26 @@
             overflow-x: hidden;
         }
 
+        .retang-text {
+            width: 552px;
+            height: 106px;
+            flex-shrink: 0;
+            background: linear-gradient(180deg, rgba(137, 124, 118, 0.75) 0%, rgba(217, 217, 217, 0.00) 100%);
+            border-radius: 25px;
+        }
+
+        .text-retangulo {
+            color: #000000;
+            font-family: Inter;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            padding: 0;
+            margin: 0;
+            z-index: 2;
+        }
+
         .equipe-section {
             background-color: #f8f9fa;
         }
@@ -231,6 +252,16 @@
                 <div class="col-md-8">
                     <h1 class="mt-4 text-inicial">Sistema de monitoramento Bovino</h1>
                     <h1 class="text-inicial mt-3">O futuro do agronegocio</h1>
+                    <div class="retang-text mt-5 p-5 pt-3">
+                        <h3 class="text-retangulo">
+                            A mais nova Startup de tecnologia focada
+                            em Inteligencia Artificial para Pré-diagnósticos
+                            da Doença da “Vaca Louca”
+                        </h3>
+                    </div>
+                    <div class="mt-5 d-flex justify-content-start"> 
+                        <button class="btn-warning btn col-6"><h2>Assine Agora</h2></button>
+                    </div>
                 </div>
             </div>
         </div>
