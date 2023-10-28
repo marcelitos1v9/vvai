@@ -9,11 +9,21 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
     <style>
+        @font-face {
+            font-family: 'Inter';
+            src: url('./font/Inter-VariableFont_slnt\,wght.ttf') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         #loader {
             position: fixed;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            width: 100vw;
+            /* Alterado para 100vw para cobrir a largura da tela */
+            height: 100vh;
+            /* Alterado para 100vh para cobrir a altura da tela */
+            background: rgba(33, 37, 41, 0.5);
+            /* Cor de fundo com opacidade de 50% */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,77 +32,71 @@
             z-index: 9999;
             animation: spin 2s linear infinite;
         }
-
-
-
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            /* Adicione um preenchimento para afastar a barra de navegação das bordas */
-            background-color: #212529;
-            /* Cor de fundo da barra de navegação */
+        .radius{
+            border-radius: 25px;
         }
+
+        .btn-warning {
+            border: #000000;
+            border-radius: 25px;
+            font-weight: bolder;
+            font-family: inter;
+        }
+
+        .titulo {
+            color: #FFF;
+            font-family: 'Inter';
+            font-size: 64px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+        }
+
+        .text-inicial {
+            color: #F2BF26;
+            font-size: 40px;
+            font-family: Inter;
+            font-style: italic;
+            font-weight: 800;
+            line-height: normal;
+        }
+
+        .img-mancha {
+            width: 70rem;
+            margin-left: -50%;
+        }
+
+        .nav-link:visited {
+            color: #ffffff;
+            /* Cor padrão para links não visitados e visitados */
+            text-decoration: none;
+            /* Remove sublinhado */
+        }
+
 
         .navbar-brand img {
             width: 50px;
             height: 50px;
         }
 
-        .navbar-nav {
-            justify-content: center;
+
+        .nav-item {
+            margin-right: 20px;
         }
 
-        .carousel-inner img {
-            width: 100%;
-            height: auto;
+        .nav-link {
+            color: #f8f9fa;
         }
 
-        .btn-p {
-            font-size: 17px;
-            background: transparent;
-            border: none;
-            padding: 1em 2em;
-            color: #1e1e2b;
-            text-transform: uppercase;
-            position: relative;
-            transition: .5s ease;
-
+        .nav-link:hover {
+            color: #bcbcbc;
+            cursor: pointer;
         }
 
-        .btn-p::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 0;
-            background-color: #1e1e2b;
-            transition: .5s ease;
+        .nav-link::before {
+            color: #9f9f9f;
         }
 
-        .btn-p:hover {
-            color: #1e1e2b;
-            transition-delay: .5s;
-        }
-
-        .btn-p:hover::before {
-            width: 100%;
-        }
-
-
-
-        .btn-p:active {
-            transform: translateY(2px) translateX(1px);
-            box-shadow: 0 0 0 0 black;
-        }
-
-        .btn-p:hover::after {
-            height: 100%;
-            transition-delay: 0.4s;
-            color: aliceblue;
-        }
 
         .container-p {
             background-color: dimgrey;
@@ -101,20 +105,75 @@
             margin-bottom: 10px;
         }
 
+        #inicio {
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100vw;
+            height: 100vh;
+            color: #212529;
+
+        }
+
+        .bg-image {
+            background: linear-gradient(0deg, rgba(40, 42, 90, 0.25) 0%, rgba(40, 42, 90, 0.25) 100%), url(./img/bg-vaca.jpg), lightgray 50% / cover no-repeat;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .retang-text {
+            width: 30rem;
+            height: 6rem;
+            flex-shrink: 0;
+            background: linear-gradient(180deg, rgba(137, 124, 118, 0.75) 0%, rgba(217, 217, 217, 0.00) 100%);
+            border-radius: 25px;
+        }
+
+        .text-retangulo {
+            color: #000000;
+            font-family: Inter;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            padding: 0;
+            margin: 0;
+            z-index: 2;
+        }
+
         .equipe-section {
             background-color: #f8f9fa;
+        }
+        hr{
+            padding: 0;
+            margin: 0;
         }
 
         .equipe-member img {
             width: 200px;
-            /* Ajuste o tamanho da imagem conforme necessário */
-            border-radius: 50%;
-            margin-bottom: 10px;
         }
+
+        .aum {
+
+            transition: transform 0.3s ease;
+        }
+
+        .aum:hover {
+            transform: scale(1.2);
+        }
+
 
         .equipe-member {
             opacity: 0;
             animation: fadeIn 1s forwards;
+        }
+
+        .bg-blue{
+            background-color: #282A5A;
         }
 
         @keyframes fadeIn {
@@ -157,73 +216,80 @@
     </style>
 </head>
 
-<body class="bg-dark text-light">
-    <div id="loader"></div>
-    <div class="navbar-container   fixed-top bg-light">
-        <div class="navbar-brand">
-            <a href="#"><img src="./img/logo.svg" class="logo" alt=""></a>
-        </div>
-        <div>
-            <nav class="navbar navbar-expand-md navbar-light">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link  btn-p" aria-current="page" href="#inicio">Início</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link btn-p" href="#projeto">Projeto</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link btn-p" href="#equipe">Equipe</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link btn-p" href="#junte">Junte-se a nós</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+<body class="bg-light text-dark">
+    <!-- <div id="loader"></div> -->
+    <div class="navbar fixed-top navbar-light bg-dark ">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="./img/logo.svg" class="logo d-none d-lg-block" alt="">
+            </a>
+            <div class="d-flex  justify-content-end">
+                <a class="nav-link nav-item " id="inicial" href="#inicio" aria-current="page">Início</a>
+                <a class="nav-link nav-item " href="#projeto">Projeto</a>
+                <a class="nav-link nav-item " href="#valey">Quem somos?</a>
+                <a class="nav-link nav-item " href="#equipe">Equipe</a>
+                <a class="nav-link nav-item " href="#junte">Juntar-se</a>
+            </div>
         </div>
     </div>
-    <h1 class="mt-5 pt-5 text-center">VvAi</h1>
-    <section id="inicio">
-        <div class="container mt-5 pb-3">
+    <hr>
+    <section id="inicio" class="bg-image mt-4 py-5">
+        <div class="container ">
             <div class="row">
-                <div class="col-md-6 m-auto">
-                    <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="./img/vvai.svg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="2000">
-                                <img src="./img/vaca.svg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./img/vvai2.svg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                <div class="col-lg-12 text-center ">
+                    <h1 class=" titulo ">vVai</h1>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="mt-4 text-inicial">Sistema de monitoramento Bovino</h1>
+                    <h1 class="text-inicial mt-3">O futuro do agronegocio</h1>
+                    <div class="retang-text mt-5 p-5 pt-3">
+                        <h3 class="text-retangulo">
+                            A mais nova Startup de tecnologia focada
+                            em Inteligencia Artificial para Pré-diagnósticos
+                            da Doença da “Vaca Louca”
+                        </h3>
+                    </div>
+                    <div class="mt-5 d-flex justify-content-start">
+                        <button class="btn-warning btn col-6">
+                            <h2>Assine Agora</h2>
                         </button>
                     </div>
                 </div>
-                <div class="col-md-6 ">
-                    <h1 class="mt-4">Apresentando a VVAI: Democratizando a Inteligência Artificial e o Monitoramento
+            </div>
+        </div>
+    </section>
+    <hr class="p-0 mt-0">
+    <section id="projeto" class="bg-light text-dark overflow-hidden">
+        <div class="container-fluid py-5">
+            <div class="row">
+                <div class="col-md-6 order-md-2 d-flex justify-content-between">
+                    <div class="justify-content-center align-items-center text-center">
+                        <img src="./img/system_cow.png" class="mt-3 w-75 justify-content-center text-center">
+                        <img src="./img/vaca_circ.png" alt="" class="m-auto mt-3 p-auto w-75" style="">
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="img-mancha d-flex ">
+                        <img src="./img/mancha (1).png" class="w-100" alt="">
+                        </img>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="valey" class="bg-light text-dark">
+        <h1 class="mt-3 pt-5 text-center">VAlley View Artificial inteligence</h1>
+        <div class="container mt-5 pb-3">
+            <div class="row">
+                <div class="col-md-4 m-auto">
+                    <img src="./img/vvai.svg" class="d-block w-100" alt="...">
+                </div>
+                <div class="col-md-8 ">
+                    <h1 class="mt-3 m-auto p-3">Apresentando a VVAI: Democratizando a Inteligência Artificial e o Monitoramento
                         para
                         Todos</h1>
-                    <p>Seja bem-vindo à VVAI, a vanguarda da inovação que está transformando o cenário da inteligência
+                    <p class="mt-4">Seja bem-vindo à VVAI, a vanguarda da inovação que está transformando o cenário da inteligência
                         artificial e do monitoramento, tornando essas tecnologias avançadas mais acessíveis do que nunca
                         para todos os usuários. Na VVAI, acreditamos que o futuro da tecnologia deve ser inclusivo, e é
                         por
@@ -241,72 +307,51 @@
         </div>
     </section>
     <hr>
-    <section id="projeto">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-center">
-                    <div class="justify-content-center align-items-center text-center">
-                        <img src="./img/vaca_circ.png" alt="" class="m-auto p-auto w-75" style="">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h1 class="mt-3 py-4">Bem-vindo à System Cow, uma revolução em monitoramento bovino.</h1>
-
-                    <p><strong>Inteligência Artificial Avançada:</strong> Nossa System Cow é alimentada por algoritmos
-                        de
-                        inteligência artificial altamente sofisticados, que analisam minuciosamente o comportamento dos
-                        bovinos em tempo real.</p>
-                    <p><strong>Diagnóstico Preciso</strong>: Ao monitorar uma série de padrões comportamentais, nossa
-                        tecnologia é capaz de identificar sinais sutis de EEB, permitindo diagnósticos precoces e
-                        intervenções rápidas.</p>
-                    <p><strong>Bem-Estar Animal em Primeiro Lugar:</strong> Nosso sistema não apenas detecta doenças,
-                        mas
-                        também promove o bem-estar dos animais. Ao entender seus comportamentos, podemos criar ambientes
-                        que
-                        melhor atendam às suas necessidades, melhorando sua qualidade de vida.</p>
-                    <p><strong>Solução Sustentável:</strong> Além de proteger a saúde do seu rebanho, nossa abordagem
-                        inovadora ajuda a promover a sustentabilidade da indústria pecuária, garantindo uma produção
-                        segura
-                        e ética.</p>
-                    <p>Na System Cow, estamos comprometidos com a saúde dos seus animais e o sucesso do seu negócio.
-                        Junte-se a nós na vanguarda da tecnologia de monitoramento bovino e proporcione aos seus bovinos
-                        o
-                        cuidado que merecem.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr>
-    <section id="equipe" class="py-5">
+    <section id="equipe" class="py-5 text-light bg-blue">
         <div class="container">
             <h1 class="text-center mb-3">Equipe VvAi</h1>
-            <div class="row">
+            <div class="row py-3">
                 <div class="col-md-4">
                     <div class="equipe-member text-center">
-                        <img src="./img/marcelito.jpeg" class="mt-3" alt="Nome do Membro da Equipe">
+                        <img src="./img/img_marcelo.png" class="mt-3 mb-3" alt="Nome do Membro da Equipe">
+                        <h3 class="mb-3">Marcelo Augusto</h3>
+                        <p>Cargo do Membro</p>
+                        <p>Uma breve descrição sobre o membro da equipe e suas responsabilidades.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="equipe-member text-center ">
+                        <img src="./img/img_leo.png" class="mt-3 mb-3" alt="Nome do Membro da Equipe">
+                        <h3 class="mb-3">Marcelo Augusto</h3>
+                        <p>Cargo do Membro</p>
+                        <p>Uma breve descrição sobre o membro da equipe e suas responsabilidades.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="equipe-member text-center">
+                        <img src="./img/img_marlon.png" class="mt-3 mb-3" alt="Nome do Membro da Equipe">
                         <h3 class="mb-3">Marcelo Augusto</h3>
                         <p>Cargo do Membro</p>
                         <p>Uma breve descrição sobre o membro da equipe e suas responsabilidades.</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <hr>
-    <section id="junte" class=" py-5">
+    <section id="junte" class="bg-blue text-light py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
                     <h2 class="mb-4">Faça Parte da Nossa Comunidade</h2>
                     <p>Inscreva-se para receber as últimas atualizações, ofertas exclusivas e muito mais!</p>
-                    <form>
-                        <div class="row">
-                            <div class="col-md-8 mx-auto">
-                                <div class="input-group mb-3">
-                                    <input type="email" class="form-control" placeholder="Seu Email" required>
-                                    <button class="btn btn-light" type="submit">Inscrever-se</button>
-                                </div>
-                            </div>
+
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control radius" placeholder="Email"
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-warning" type="submit" id="button-addon2">inscrever-se</button>
                         </div>
                     </form>
                 </div>
@@ -361,6 +406,52 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            var navbarHeight = document.querySelector('.navbar').offsetHeight;
+            var sectionPosition = section.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: sectionPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Seção inicial
+            var initialSection = document.getElementById("inicio");
+
+            // Função para rolar para a seção inicial com um pequeno ajuste para a navbar
+            function scrollToInitialSection() {
+                var navbarHeight = document.querySelector('.navbar').offsetHeight;
+                var sectionPosition = initialSection.offsetTop - navbarHeight;
+
+                window.scrollTo({
+                    top: sectionPosition,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Chama a função para rolar para a seção inicial após um pequeno atraso (por exemplo, 1 segundo após o carregamento da página)
+            setTimeout(scrollToInitialSection, 3000);
+
+            // Outros links de navegação
+            var links = document.querySelectorAll('.nav-link');
+
+            // Adiciona um evento de clique a todos os links de navegação
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Impede o comportamento padrão do link
+
+                    var sectionId = this.getAttribute('href').substring(1); // Obtém o ID da seção
+
+                    // Chama a função para rolar para a seção com um pequeno ajuste para a navbar
+                    scrollToSection(sectionId);
+                });
+            });
+        });
+
+
         document.addEventListener("DOMContentLoaded", function () {
             var loader = document.getElementById("loader");
             var images = document.querySelectorAll("img");
