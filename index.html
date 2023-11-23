@@ -8,316 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="./img/LOGOS/FUNDO_TRANSPARENTE_AZUL.png" type="image/x-icon">
-    <style>
-        @font-face {
-            font-family: 'Inter';
-            src: url('./font/Inter-VariableFont_slnt\,wght.ttf') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        #loader {
-            position: fixed;
-            width: 100vw;
-            /* Alterado para 100vw para cobrir a largura da tela */
-            height: 100vh;
-            /* Alterado para 100vh para cobrir a altura da tela */
-            background: rgba(33, 37, 41, 0.5);
-            /* Cor de fundo com opacidade de 50% */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            font-size: 24px;
-            z-index: 9999;
-            animation: spin 2s linear infinite;
-        }
-
-        .radius {
-            border-radius: 25px;
-        }
-
-        .logo {
-            width: 25px;
-            height: 25px;
-        }
-
-        .btn-warning {
-            border: #000000;
-            border-radius: 25px;
-            font-weight: bolder;
-            font-family: inter;
-        }
-
-        .titulo {
-            color: #FFF;
-            font-family: 'Inter';
-            font-size: 6vw;
-            font-style: normal;
-            font-weight: 900;
-            line-height: normal;
-        }
-
-        .text-inicial {
-            color: #F2BF26;
-            font-size: 3vw;
-            font-family: Inter;
-            font-style: italic;
-            font-weight: 800;
-            line-height: normal;
-            text-align: center;
-        }
-
-        /* .img-mancha {
-            width: 70rem;
-            margin-left: -20rem;
-        } */
-
-        .nav-link:visited {
-            color: #ffffff;
-            /* Cor padrão para links não visitados e visitados */
-            text-decoration: none;
-            /* Remove sublinhado */
-        }
-
-        .nav-link::before {
-            color: #f8f9fa;
-        }
-
-
-        .navbar-brand img {
-            width: 50px;
-            height: 50px;
-        }
-
-
-        .nav-item {
-            margin-right: 20px;
-        }
-
-        .nav-link {
-            color: #f8f9fa;
-        }
-
-        .nav-link:hover {
-            color: #bcbcbc;
-            cursor: pointer;
-        }
-
-        .nav-link::before {
-            color: #9f9f9f;
-        }
-
-
-        .container-p {
-            background-color: dimgrey;
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 10px;
-        }
-
-        /* .mancha1 {
-            background-image: url(./img/mancha.png);
-            width: 110%;
-            height: 90%;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .mancha1 p {
-            color: #fff;
-            font-family: Arial, sans-serif;
-            width: 400px;
-            height: 100px;
-            align-items: center;
-            justify-content: center;
-            top:-20%
-        } */
-        .mancha2 {
-            border-radius: 41% 59% 42% 58% / 55% 57% 43% 45%;
-            width: 150rem;
-            height: 25rem;
-            max-width: 150rem;
-            max-height: 150rem;
-            /* Ajuste o espaçamento interno conforme necessário */
-            background: #282A5A;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .txt-mancha {}
-
-
-
-        #inicio {
-
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            width: 100vw;
-            height: 100vh;
-            color: #212529;
-
-        }
-
-        .bg-image {
-            background: linear-gradient(0deg, rgba(40, 42, 90, 0.25) 0%, rgba(40, 42, 90, 0.25) 100%), url(./img/bg-vaca.jpg), lightgray 50% / cover no-repeat;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-        }
-
-        body {
-            overflow-x: hidden;
-        }
-
-        .card:hover {
-            animation: floatAnimation 2s ease infinite;
-        }
-
-        @keyframes floatAnimation {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .retang-text {
-            background: linear-gradient(180deg, rgba(137, 124, 118, 0.75) 10%, rgba(217, 217, 217, 0.00) 100%);
-            border-radius: 25px;
-            width: 70vw;
-            height: 3.5rem;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 5vw;
-        }
-
-        .text-retangulo {
-            color: #ffffff;
-            font-family: Inter;
-            font-size: 1.5vw;
-            font-style: normal;
-            font-weight: 900;
-            line-height: normal;
-            margin: 0;
-            z-index: 2;
-        }
-
-        .btn-warning h2 {
-            font-size: 2vw;
-            /* Tamanho da fonte responsivo usando vw */
-        }
-
-        .equipe-section {
-            background-color: #f8f9fa;
-        }
-
-        hr {
-            padding: 0;
-            margin: 0;
-        }
-
-        .equipe-member img {
-            width: 200px;
-        }
-
-        .aum {
-
-            transition: transform 0.3s ease;
-        }
-
-        .aum:hover {
-            transform: scale(1.2);
-        }
-
-
-        .equipe-member {
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-
-        .bg-blue {
-            background-color: #282A5A;
-        }
-
-        /* Adicione estas regras CSS ao seu arquivo de estilo */
-        .membro-img {
-            width: 200px;
-            transition: transform 0.3s ease;
-        }
-
-        .membro-img:hover {
-            animation: levitate 2s infinite ease-in-out;
-        }
-
-        @keyframes levitate {
-            0% {
-                transform: translateY(0);
-                /* Começa sem movimento na posição inicial */
-            }
-
-            50% {
-                transform: translateY(-20px);
-                /* Atinge o ponto mais alto a meio da animação (20 pixels para cima) */
-            }
-
-            100% {
-                transform: translateY(0);
-                /* Retorna à posição inicial no final da animação */
-            }
-        }
-
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                content: "Carregando.";
-            }
-
-            25% {
-                content: "Carregando..";
-            }
-
-            50% {
-                content: "Carregando...";
-            }
-
-            75% {
-                content: "Carregando....";
-            }
-        }
-
-
-        #loader::after {
-            content: "Carregando.";
-            animation: pulse 1s infinite;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body class="bg-light text-dark">
@@ -339,7 +30,7 @@
     <hr>
     <section id="inicio" class="bg-image mt-4 py-5">
         <div class="container ">
-            <div class="row d-flex justify-content-start">
+            <!-- <div class="row d-flex justify-content-start">
                 <div class="col-lg-12 text-center ">
                     <h1 class=" titulo ">vVai</h1>
                 </div>
@@ -359,7 +50,33 @@
                         </button>
                     </div>
                 </div>
+            </div> -->
+            <h1 class="text-center mt-3 titulo">Vvai</h1>
+            <div class="d-flex justify-content-start">
+                <div class="col-lg-6">
+                    <h2 class="mt-3 text-light borda">Sistemas de Monitoramento Bovino</h2>
+                    <h2 class="mt-5 text-warning borda">O futuro do agronegocio</h2>
+                    <h2 class="mt-5 text-warning borda">A mais nova Startup de tecnologia focada
+                        em Inteligencia Artificial para Pré-diagnósticos
+                        da Doença da “Vaca Louca”</h2>
+                    
+                    <!-- Botão visível em desktop -->
+                    <div class="d-none d-sm-block">
+                        <a href="./views/pacote.html" class="btn-inicio mt-4 ">
+                            Assinar
+                        </a>
+                    </div>
+            
+                    <!-- Botão visível em dispositivos móveis -->
+                    <div class="d-block d-sm-none text-center">
+                        <a href="./views/pacote.html" class="btn-inicio mt-4">
+                            Assinar
+                        </a>
+                    </div>
+                </div>
             </div>
+            
+            
         </div>
     </section>
     <hr class="p-0 mt-0">
