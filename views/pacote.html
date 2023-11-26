@@ -11,33 +11,42 @@
     <link rel="stylesheet" href="../assets/style.css">
     <style>
         body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            padding-top: 56px; /* Altura da barra de navegação */
             margin: 0;
         }
 
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Espaçamento maior para telas menores */
+            }
+        }
+
+        .navbar {
+            z-index: 1000; /* Certifique-se de que a barra de navegação esteja acima dos cards */
+        }
+
+       
 
         .card:hover {
             transform: scale(1.05);
         }
     </style>
 </head>
-<div class="navbar fixed-top navbar-light bg-dark ">
-    <div class="container">
-        <a href="../" class="navbar-brand">
-            <img src="../img/LOGOS/FUNDO_PRETO_AZUL.png" class="w-100 d-none d-lg-block" alt="">
-        </a>
-        <div class="d-flex  justify-content-center">
-            <a class="nav-link nav-item " id="inicial" href="../" aria-current="page">Voltar</a>
+
+<body class="bg-light text-dark">
+    <div class="navbar fixed-top navbar-light bg-dark mb-5">
+        <div class="container">
+            <a href="../" class="navbar-brand">
+                <img src="../img/LOGOS/FUNDO_PRETO_AZUL.png" class="w-100 d-lg-block" alt="">
+            </a>
+            <div class="d-flex justify-content-center">
+                <a class="nav-link nav-item " id="inicial" href="../" aria-current="page">Voltar</a>
+            </div>
         </div>
     </div>
-</div>
-<body class="bg-light text-dark">
-    <div class="container">
+    <div class="container mt-5 pt-5">
         <div class="row d-flex justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="card">
                     <img src="https://placekitten.com/300/200" class="card-img-top" alt="Card Image">
                     <div class="card-body">
@@ -46,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="card">
                     <img src="https://placekitten.com/300/200" class="card-img-top" alt="Card Image">
                     <div class="card-body">
@@ -55,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="card">
                     <img src="https://placekitten.com/300/200" class="card-img-top" alt="Card Image">
                     <div class="card-body">
