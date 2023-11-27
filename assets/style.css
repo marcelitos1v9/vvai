@@ -258,6 +258,12 @@ body {
     z-index: 2;
 }
 
+.text-branco{
+    color: #f1f1f1;
+}
+.text-branco:hover{
+    color: #827d7d;
+}
 .btn-warning h2 {
     font-size: 2vw;
     /* Tamanho da fonte responsivo usando vw */
